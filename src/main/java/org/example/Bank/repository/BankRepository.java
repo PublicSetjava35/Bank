@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface BankRepository extends JpaRepository<Bank, Long> {
     @Override
     @NonNull
-    @EntityGraph(attributePaths = {"accounts"})
+    @EntityGraph(attributePaths = {"account"})
     Optional<Bank> findById(@NonNull Long aLong);
 }

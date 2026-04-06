@@ -6,10 +6,10 @@ import org.example.Bank.service.AccountService;
 import org.example.Bank.service.BankService;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 @AllArgsConstructor
+
 public class ConsumerKafka {
     private final AccountService accountService;
     private final BankService bankService;

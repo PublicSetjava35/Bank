@@ -3,7 +3,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Setter
 @Getter
@@ -18,8 +17,9 @@ public class Bank {
     private Long balance;
     @Column(name = "timer")
     private LocalDateTime time;
-    @OneToMany(mappedBy = "bank")
-    private List<Account> accounts;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_id")
+    private Account account;
     /* Создаем без параметров, чтобы была возможность пользоваться без конфигураций */
     public Bank(Long balance) {
         this.balance = balance;
