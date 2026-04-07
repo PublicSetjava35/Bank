@@ -16,6 +16,6 @@ public class AccountBalanceService {
     @Transactional(readOnly = true)
     public List<Long> getBalance(Long id) {
         Optional<Bank> balance = bankRepository.findById(id);
-        return balance.stream().map(Bank::getBalance).toList();
+        return balance.stream().map(Bank::getBalance).toList()  ;
     }
 }

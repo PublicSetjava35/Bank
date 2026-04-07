@@ -1,5 +1,6 @@
 package org.example.Bank.service;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.example.Bank.dto.BankDTO;
 import org.example.Bank.entity.Bank;
@@ -16,7 +17,7 @@ public class BankService {
    /* Обрабатываем любое исключение, которая попадет в обертку (PROXY) */
    @Transactional(rollbackFor = Exception.class)
    // Создаем запись, в базу данных.
-   public void saveBalance(BankDTO bankDTO) {
+   public void saveBalance(@Valid BankDTO bankDTO) {
        if(bankDTO.balance() != null && bankDTO.balance() == 0x0) {
            throw new IllegalArgumentException("Invalid balance");
        }

@@ -18,7 +18,7 @@ public class Account {
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "time")
+    @Column(name = "time_stamp")
     private LocalDateTime time;
     @OneToMany(mappedBy = "account")
     private List<Bank> banks;

@@ -15,7 +15,7 @@ public class Bank {
     private Long id;
     @Column(name = "balance")
     private Long balance;
-    @Column(name = "timer")
+    @Column(name = "timer_stamp")
     private LocalDateTime time;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
